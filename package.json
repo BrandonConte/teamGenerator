@@ -1,0 +1,22 @@
+{
+    "name": "team-gen",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "test": "jest"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/raealejandrino/team-profile-gen.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/raealejandrino/team-profile-gen/issues"
+    },
+    "homepage": "https://github.com/raealejandrino/team-profile-gen#readme",
+    "devDependencies": {
+      "jest": "^27.3.1"
+    }
+  } 
