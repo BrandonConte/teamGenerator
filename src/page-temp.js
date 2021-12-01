@@ -1,4 +1,57 @@
-const generatePage = (manage, ...employees) => {
+const employeeCards = (employees) => {
+
+    if (employees) {
+        
+        employees.map(employee => {
+
+            if (employee.github) {
+
+                return `
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">${employee.name}</h5>
+                            <h5 class="card-title">Engineer</h5>
+                        </div>
+                        <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border border-bottom-0">ID: ${employee.id}</li>
+                            <li class="list-group-item border border-bottom-0">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                            <li class="list-group-item border">Github: <a href="https://github.com/${employee.github}" target="_blank">${employee.github}</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                `
+
+            } else {
+
+                return `
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">${employee.name}</h5>
+                            <h5 class="card-title">Intern</h5>
+                        </div>
+                        <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border border-bottom-0">ID: ${employee.id}</li>
+                            <li class="list-group-item border border-bottom-0">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                            <li class="list-group-item border">School: ${employee.school}</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                `
+            }
+
+    
+        });
+    } 
+};
+
+
+const generatePage = (manager, employees) => {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -10,13 +63,41 @@ const generatePage = (manage, ...employees) => {
         <title>My Team</title>
     </head>
     <body>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Navbar</span>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-light bg-light mb-5">
+            <div class="d-flex justify-content-center container-fluid">
+                <span class="navbar-brand mb-0 h1">My Team</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                    <div class="col mb-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">${manager.name}</h5>
+                                <h5 class="card-title">Manager</h5>
+                            </div>
+                            <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border border-bottom-0">ID: ${manager.id}</li>
+                                <li class="list-group-item border border-bottom-0">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+                                <li class="list-group-item border">Office number: ${manager.officeNum}</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    ${employeeCards(employees)}
+                </div>
+            </div>
+        </section>
+    </main>
         
     </body>
     </html>
     `
-}
+};
+
+module.exports = generatePage;

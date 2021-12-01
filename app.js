@@ -5,4 +5,4 @@ const writeFile = require('./utils/generate-site');
 
 const testTeam = new Team();
 
-testTeam.initializeManager();
+testTeam.initializeManager()
