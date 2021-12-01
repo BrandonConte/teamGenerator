@@ -1,3 +1,4 @@
+let fillIn = '';
 const employeeCards = (employees) => {
 
     if (employees) {
@@ -6,7 +7,7 @@ const employeeCards = (employees) => {
 
             if (employee.github) {
 
-                return `
+                fillIn += `
                 <div class="col mb-3">
                     <div class="card">
                         <div class="card-header">
@@ -26,7 +27,7 @@ const employeeCards = (employees) => {
 
             } else {
 
-                return `
+                fillIn += `
                 <div class="col mb-3">
                     <div class="card">
                         <div class="card-header">
@@ -48,7 +49,9 @@ const employeeCards = (employees) => {
     
         });
     } 
+    return fillIn;
 };
+
 
 
 const generatePage = (manager, employees) => {
