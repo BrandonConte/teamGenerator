@@ -87,7 +87,7 @@ const generatePage = (manager, employees) => {
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item border border-bottom-0">ID: ${manager.id}</li>
                                 <li class="list-group-item border border-bottom-0">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-                                <li class="list-group-item border">Office number: ${manager.officeNum}</li>
+                                <li class="list-group-item border">Office number: ${manager.officeNumber}</li>
                             </ul>
                             </div>
                         </div>
